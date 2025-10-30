@@ -2,6 +2,8 @@
 import "@babylonjs/inspector";
 import * as BABYLON from '@babylonjs/core';
 import * as anu from '@jpmorganchase/anu' //import anu, this project is using a local import of babylon js located at ../babylonjs-anu this may not be the latest version and is used for simplicity.
+import { papersChart } from "./charts/papers";
+import { authorsNetwork } from "./charts/authors";
 
 //Grab DOM element where we will attach our canvas. #app is the id assigned to an empty <div> in our index.html 
 const app = document.querySelector('#app');
@@ -15,6 +17,8 @@ const babylonEngine = new BABYLON.Engine(canvas, true)
 //create a scene object using our engine
 const scene = new BABYLON.Scene(babylonEngine)
 
+scene.clearColor = BABYLON.Color3.Black();
+
 //Add lights and a camera
 new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0, 10, 0), scene)
 const camera = new BABYLON.ArcRotateCamera("Camera", -(Math.PI / 4) * 3, Math.PI / 4, 10, new BABYLON.Vector3(0, 0, 0), scene);
@@ -22,7 +26,11 @@ camera.position = new BABYLON.Vector3(-10, 10, -20)
 camera.attachControl(true)
 
 //Make a box as a anu Selection object
-let box = anu.bind('box');
+//let box = anu.bind('box');
+
+
+await papersChart(scene);
+await authorsNetwork(scene);
 
 //Render the scene we created
 babylonEngine.runRenderLoop(() => {
@@ -38,9 +46,9 @@ window.addEventListener("resize", function () {
 //if you browser does not support these feature comment it out. 
 try {
   var defaultXRExperience = await scene.createDefaultXRExperienceAsync({});
-  const featureManager = defaultXRExperience.baseExperience.featuresManager;
-  featuresManager.enableFeature(WebXRFeatureName.LAYERS, "latest", { preferMultiviewOnInit: true }, true, false);
-  featuresManager.enableFeature(WebXRFeatureName.SPACE_WARP, "latest");
+  // const featureManager = defaultXRExperience.baseExperience.featuresManager;
+  // featuresManager.enableFeature(WebXRFeatureName.LAYERS, "latest", { preferMultiviewOnInit: true }, true, false);
+  // featuresManager.enableFeature(WebXRFeatureName.SPACE_WARP, "latest");
 } catch {
   console.warn('XR Not Supported');
 }
