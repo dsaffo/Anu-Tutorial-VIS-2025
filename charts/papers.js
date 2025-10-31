@@ -12,7 +12,8 @@ export const papersChart = async (scene) => {
     let scaleZ = d3.scaleBand().domain(data.map(d => d.Year)).range([0, 10]).padding(0.1);
 
 
-    let scaleC = d3.scaleOrdinal(anu.ordinalChromatic('d310').toColor4())
+    let scaleC = d3.scaleOrdinal().domain(["", "HM", "BP", "TT", "TT;HM", "TT;BP"]).range(anu.ordinalChromatic(['#FFFFFF', '#1b9e77', '#d95f02', '#7570b3', '#FFD700', '#FFD700']).toColor4());
+
     
     let chart = anu.bind('cot')
                     .name('ScatterPlot')
