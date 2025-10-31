@@ -17,15 +17,17 @@ export const authorsNetwork = async (scene) => {
                           .force('collide', d3force.forceCollide())
                           .force('center', d3force.forceCenter(0, 0, 0))
                           .on('tick', ticked)
-                          .on('end', () => simulation.stop());
+                          .on('end', () => simulation.stop())
 
   //We use Mesh instancing here for better performance, first we create a Mesh that serves as the root Node
-  let rootSphere = anu.create('sphere', 'node', { diameter: 10, segments: 8 });
+  let rootSphere = anu.create('sphere', 'node', { diameter: 25, segments: 4 });
   rootSphere.isVisible = false;
   rootSphere.registerInstancedBuffer('color', 4);
 
   //Create a Center of Transform that will be the parent node of our network
-  let network = anu.bind('cot', undefined, [undefined]);
+  let network = anu.bind('cot').name('authorsNetwork');
+
+  network.position(new BABYLON.Vector3(10, 5, 4));
 
   //Create a D3 color scale of the 'schemecategory10' palette to map data to Color4 objects
   let scaleC = d3.scaleOrdinal(anu.ordinalChromatic('d310').toColor4());
@@ -51,13 +53,13 @@ export const authorsNetwork = async (scene) => {
 
   //Create the callback that will run every simulation tick to update our node and links
   function ticked() {
-    //For the instanced spheres, just set a new position based on values populated by the simulation
+     //For the instanced spheres, just set a new position based on values populated by the simulation
     nodes.position((d) => (new BABYLON.Vector3(d.x, d.y, d.z)));
     //For the links, use the run method to replace the lineSystem mesh with a new one, passing in the mesh into the instance option
     links.run((d,n,i) => anu.create('lineSystem', 'edge', { lines: dataToLinks(d), instance: n, updatable: true }, d));
   }
 
-  //The network can get quite big in size (spatial size), so here we run a function to scale the entire network down to a 1x1x1 box
+  // //The network can get quite big in size (spatial size), so here we run a function to scale the entire network down to a 1x1x1 box
   network.run((d,n,i) => n.normalizeToUnitCube());
 
   return scene;

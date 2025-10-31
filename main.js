@@ -4,6 +4,7 @@ import * as BABYLON from '@babylonjs/core';
 import * as anu from '@jpmorganchase/anu' //import anu, this project is using a local import of babylon js located at ../babylonjs-anu this may not be the latest version and is used for simplicity.
 import { papersChart } from "./charts/papers";
 import { authorsNetwork } from "./charts/authors";
+import { affiliationsChart } from "./charts/affiliations";
 
 //Grab DOM element where we will attach our canvas. #app is the id assigned to an empty <div> in our index.html 
 const app = document.querySelector('#app');
@@ -31,6 +32,7 @@ camera.attachControl(true)
 
 await papersChart(scene);
 await authorsNetwork(scene);
+await affiliationsChart(scene);
 
 //Render the scene we created
 babylonEngine.runRenderLoop(() => {

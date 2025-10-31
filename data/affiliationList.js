@@ -1,4 +1,4 @@
-var affiliations = [{
+export const affiliations = [{
     "Number": "0",
     "Name": "University of British Columbia",
     "NameSimple": "UBC",
