@@ -25,7 +25,7 @@ export const authorsNetwork = async (scene) => {
   rootSphere.registerInstancedBuffer('color', 4);
 
   //Create a Center of Transform that will be the parent node of our network
-  let network = anu.bind('cot', undefined, [undefined]);
+  let network = anu.bind('cot');
 
   //Create a D3 color scale of the 'schemecategory10' palette to map data to Color4 objects
   let scaleC = d3.scaleOrdinal(anu.ordinalChromatic('d310').toColor4());
