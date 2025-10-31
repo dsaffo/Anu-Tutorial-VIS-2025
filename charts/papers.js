@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 import data from '../data/paperData.json' assert {type: 'json'};  //Our data
 
 //Create a scatter plot of papers over the years
-export const papersChart = async (scene) => { 
+export const papersChart = async (scene) => {
 
     //let scaleX = d3.scaleBand().domain(data.map(d => d.Year)).range([0, 10]).padding(0.1);
     let scaleX = d3.scaleSymlog().domain(d3.extent(data, d => d["Downloads_Xplore"])).range([0, 10]).constant(5000).nice();
@@ -40,5 +40,5 @@ export const papersChart = async (scene) => {
 
     let axes = anu.createAxes("scatterplotAxes", axesConfig);
 
-    return scene;
+  return scene;
 }
