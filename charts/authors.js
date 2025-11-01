@@ -10,7 +10,7 @@ export const authorsNetwork = async (scene) => {
   //Create a deep clone of our data, as the simulation  mutates it
   let data = JSON.parse(JSON.stringify(authorGraph));
 
-  //Create our D3 simulation
+  //Create our D3 force simulation; this will populate the data with some positional values
   let simulation = d3force.forceSimulation(data.nodes, 3)
                           .force('link', d3force.forceLink(data.links).id(d => d.id))
                           .force('charge', d3force.forceManyBody())
@@ -19,48 +19,54 @@ export const authorsNetwork = async (scene) => {
                           .on('tick', ticked)
                           .on('end', () => simulation.stop())
 
-  //We use Mesh instancing here for better performance, first we create a Mesh that serves as the root Node
-  let rootSphere = anu.create('sphere', 'node', { diameter: 25, segments: 4 });
-  rootSphere.isVisible = false;
-  rootSphere.hasVertexAlpha = true;
-  rootSphere.registerInstancedBuffer('color', 4);
+  //Create scales that will map data to visual variables
+  //Positional encodings will be set by the force simulation
+  let scaleC = d3.scaleOrdinal(anu.ordinalChromatic('d310').toColor4());  //Affiliation
+  let scaleSize = d3.scaleLinear().domain([1, d3.max(data.nodes.map(d => d.paperIndex.length))]).range([0.5, 2]); //Number of publications
 
   //Create a Center of Transform that will be the parent node of our network
-  let network = anu.bind('cot').name('authorsNetwork');
+  let network = anu.bind('cot')
+                    .name('authors-network')
+                    .position(new BABYLON.Vector3(10, 5, 4));
 
-  network.position(new BABYLON.Vector3(10, 5, 4));
+  //We will use Mesh instancing to improve performance of our network nodes
+  //First we create a root Mesh will be instanced off of
+  let rootNode = anu.create('sphere', 'root-node', { diameter: 25, segments: 4 });
+  rootNode.isVisible = false;
+  rootNode.hasVertexAlpha = true; //Required for transparency
+  rootNode.registerInstancedBuffer('color', 4);
 
-  //Create a D3 color scale of the 'schemecategory10' palette to map data to Color4 objects
-  let scaleC = d3.scaleOrdinal(anu.ordinalChromatic('d310').toColor4());
-  //Create a D3 scale to help size each node based on number of papers published by that autho
-  let scaleSize = d3.scaleLinear().domain([1, d3.max(data.nodes.map(d => d.paperIndex.length))]).range([0.5, 2]);
-
-  //Create our nodes, we will set their position in the simulation
-  let nodes = network.bindInstance(rootSphere, data.nodes)
+  //Then we bind instances from this root Mesh to create our network nodes
+  let nodes = network.bindInstance(rootNode, data.nodes)
+                      .name('network-nodes')
+                      .id((d) => d.id)
+                      .position((d) => new BABYLON.Vector3(d.x, d.y, d.z))  //Initial positional values by the simulation
                       .setInstancedBuffer('color', (d) => scaleC(d.affiliation))
-                      .scaling((d) => new BABYLON.Vector3(scaleSize(d.paperIndex.length), scaleSize(d.paperIndex.length), scaleSize(d.paperIndex.length)))
-                      .id((d) => d.id);
+                      .scaling((d) => BABYLON.Vector3.One().scale(scaleSize(d.paperIndex.length)));
 
-  //Create a helper function that will return us an array of arrays where each sub-array is the start and end Vector3 of each link
-  function dataToLinks(data) {
+
+  //Create a helper function to map simulation data to a data structure needed for our lineSystem
+  function dataToLinkPositions(data) {
     let lines = [];
     data.forEach((v, i) => {
-        let start = (new BABYLON.Vector3(v.source.x, v.source.y, v.source.z));
-        let end = (new BABYLON.Vector3(v.target.x, v.target.y, v.target.z));
+        let start = new BABYLON.Vector3(v.source.x, v.source.y, v.source.z);
+        let end = new BABYLON.Vector3(v.target.x, v.target.y, v.target.z);
         lines.push([start, end]);
     })
     return lines;
   }
 
   //Create our lineSystem mesh using our data and helper function from above
-  let links = network.bind('lineSystem', { lines: (d) => dataToLinks(d), updatable: true }, [data.links]);
+  let links = network.bind('lineSystem', { lines: (d) => dataToLinkPositions(d), updatable: true }, [data.links])
+                      .name('network-links');
+
 
   //Create the callback that will run every simulation tick to update our node and links
   function ticked() {
      //For the instanced spheres, just set a new position based on values populated by the simulation
     nodes.position((d) => (new BABYLON.Vector3(d.x, d.y, d.z)));
     //For the links, use the run method to replace the lineSystem mesh with a new one, passing in the mesh into the instance option
-    links.run((d,n,i) => anu.create('lineSystem', 'edge', { lines: dataToLinks(d), instance: n, updatable: true }, d));
+    links.run((d,n,i) => anu.create('lineSystem', 'network-links', { lines: dataToLinkPositions(d), instance: n, updatable: true }, d));
   }
 
   //The network can get quite big in size (spatial size), so here we run a function to scale the entire network down to a 1x1x1 box
@@ -70,7 +76,7 @@ export const authorsNetwork = async (scene) => {
   //--------------------------------------------
 
   //Create a plane Mesh that will serve as our tooltip
-  const hoverPlane = anu.create('plane', 'hoverPlane', { width: 1, height: 1 });
+  const hoverPlane = anu.create('plane', 'authors-network-tooltip', { width: 1, height: 1 });
   hoverPlane.isPickable = false;    //Disable picking so it doesn't get in the way of interactions
   hoverPlane.renderingGroupId = 1;  //Set render id higher so it always renders in front of other objects
   hoverPlane.isVisible = false;     //Hide the tooltip
@@ -94,25 +100,30 @@ export const authorsNetwork = async (scene) => {
   label.paddingLeftInPixels = 25;
   label.paddingRightInPixels = 25;
   label.fontSizeInPixels = 50;
+  label.textHorizontalAlignment = GUI.Control.HORIZONTAL_ALIGNMENT_LEFT;
+  label.textWrapping = GUI.TextWrapping.WordWrap;
   label.resizeToFit = true;
   label.text = ' ';
   UIBackground.addControl(label);
 
-  //Bind actions to the nodes
+  //Bind an action to show the tooltip
   nodes.action((d, n, i) => new BABYLON.ExecuteCodeAction(
-      BABYLON.ActionManager.OnPointerOverTrigger,
-      () => {
-        label.text = `${d.id}\n${d.affiliation}\n${d.paperIndex.length} paper(s)`;
-        hoverPlane.position = n.absolutePosition.add(new BABYLON.Vector3(0, 0.2, 0));
-        hoverPlane.isVisible = true;
-      }
-    ))
-    .action((d, n, i) => new BABYLON.ExecuteCodeAction(
-      BABYLON.ActionManager.OnPointerOutTrigger,
-      () => {
-        hoverPlane.isVisible = false;
-      }
-    ));
+    BABYLON.ActionManager.OnPointerOverTrigger,
+    () => {
+      //Update the label text and place it above the dot
+      label.text = `${d.id}\n${d.affiliation}\n${d.paperIndex.length} paper(s)`;
+      hoverPlane.position = n.absolutePosition.add(new BABYLON.Vector3(0, 0.2, 0));
+      hoverPlane.isVisible = true;
+    }
+  ));
+
+  //Bind an action to hide the tooltip
+  nodes.action((d, n, i) => new BABYLON.ExecuteCodeAction(
+    BABYLON.ActionManager.OnPointerOutTrigger,
+    () => {
+      hoverPlane.isVisible = false;
+    }
+  ));
 
   //--------------------------------------------
 
@@ -136,6 +147,7 @@ export const authorsNetwork = async (scene) => {
       });
     }
   ));
+
   //Bind an action to unhighlight the node
   nodes.action((d, n, i) => new BABYLON.ExecuteCodeAction(
       BABYLON.ActionManager.OnDoublePickTrigger,

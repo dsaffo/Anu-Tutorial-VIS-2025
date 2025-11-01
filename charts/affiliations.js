@@ -1,37 +1,47 @@
 import * as anu from '@jpmorganchase/anu';
 import * as BABYLON from '@babylonjs/core';
 import * as d3 from 'd3';
+import { XYZ } from 'ol/source';
+import TileLayer from 'ol/layer/Tile';
 import data from '../data/paperData.json' assert {type: 'json'};  //Our data
-import {affiliations} from '../data/affiliationList' //Location Key
+import { affiliations } from '../data/affiliationList' //Location Key
 
 export const affiliationsChart = async (scene) => {
 
-    
   //Use the Texture Map prefab to create a plane with an OpenLayers map canvas as the texture
-  let textureMap = anu.createTextureMap('map', { meshSize: 10, mapHeight: 2000, mapWidth: 3000 });
+  let textureMap = anu.createTextureMap('affiliations-map',
+    {
+      //We can set a custom tile provider by modifying the layers
+      layers: [
+        new TileLayer({
+          source: new XYZ({ crossOrigin: 'anonymous', urls: ['https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}']})
+        })
+      ],
+      meshSize: 10,
+      mapHeight: 2000,
+      mapWidth: 3000
+    }
+  );
 
-  //Get the OpenLayers map object from the prefab which we will need to customize its settings
-  let map = textureMap.map;
-  //Change the view parameters of the map to focus on the US
-  map.getView().setCenter([0,20]);
-  map.getView().setZoom(3);
+  //We can access the OpenLayers map objects to change settings like Zoom level
+  let openLayersMap = textureMap.map;
+  // openLayersMap.getView().setCenter([0,20]);
+  // openLayersMap.getView().setZoom(3);
 
   //Turn on keyboard controls on the TextureMap prefab (uses WASD and -+)
-  //Due to a technical quirk, this function must be called *after* setting the center and zoom of the view
   textureMap.keyboardControls(scene);
 
 
-  //To help create our dots, the Texture Map prefab generates scale functions for us to convert lon/lat to positions in Babylon's coordinate space
+  //The Texture Map prefab generates scale functions for us to convert lon/lat to positions in Babylon's coordinate space
   let scaleLon = textureMap.scaleLon;
   let scaleLat = textureMap.scaleLat;
-  //Create a D3 scale for color, using Anu helper functions map scale outputs to Color4 objects based on the 'schemecategory10' palette from D3
+  //Create another D3 scale for color
   let scaleC = d3.scaleOrdinal(anu.ordinalChromatic('d310').toColor4(52));
 
-
   //Select our map object as a Selection object which will serve as our CoT
-  let chart = anu.selectName('map', scene);
+  let chart = anu.selectName('affiliations-map', scene)
+                  .position(new BABYLON.Vector3(0, 0, -10));
 
-  chart.position(new BABYLON.Vector3(0, 0, -10));
 
   // 1) Build an index of affiliation coordinates from the affiliation list
   //    Position is provided as "lat,lon" string; we convert to numbers and store as {latitude, longitude}
@@ -131,7 +141,7 @@ export const affiliationsChart = async (scene) => {
   const missingItems = aggregated.filter(d => !d.hasCoords);
   const fallbackPos = new Map(); // name -> {x, z}
 
-  map.on('rendercomplete', () => {
+  openLayersMap.on('rendercomplete', () => {
     // Lazily compute fallback positions once we have the map mesh bounds
     if (fallbackPos.size === 0 && missingItems.length > 0) {
       const bbox = textureMap.mesh.getBoundingInfo().boundingBox;
@@ -160,6 +170,6 @@ export const affiliationsChart = async (scene) => {
                  n.position.z < parentBoundingBox.minimum.z);
       });
   });
-    
+
     return scene;
 }

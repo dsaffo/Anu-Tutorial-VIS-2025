@@ -1,7 +1,7 @@
 
 import "@babylonjs/inspector";
 import * as BABYLON from '@babylonjs/core';
-import * as anu from '@jpmorganchase/anu' //import anu, this project is using a local import of babylon js located at ../babylonjs-anu this may not be the latest version and is used for simplicity.
+import * as anu from '@jpmorganchase/anu';
 import { papersChart } from "./charts/papers";
 import { authorsNetwork } from "./charts/authors";
 import { affiliationsChart } from "./charts/affiliations";
@@ -12,12 +12,11 @@ const app = document.querySelector('#app');
 const canvas = document.createElement('canvas');
 app.appendChild(canvas);
 
-//initialize babylon engine, passing in our target canvas element, and create a new scene
+//Initialize Babylon engine on the canvas we just created
 const babylonEngine = new BABYLON.Engine(canvas, true)
 
-//create a scene object using our engine
-const scene = new BABYLON.Scene(babylonEngine)
-
+//Create a scene for our engine
+const scene = new BABYLON.Scene(babylonEngine);
 scene.clearColor = BABYLON.Color3.Black();
 
 //Add lights and a camera
@@ -27,15 +26,12 @@ camera.position = new BABYLON.Vector3(-10, 10, -20)
 camera.lowerRadiusLimit = 0.1;
 camera.attachControl(true)
 
-//Make a box as a anu Selection object
-//let box = anu.bind('box');
-
-
+//Run scripts that will create visualizations in our scene we created and pass in
 await papersChart(scene);
 await authorsNetwork(scene);
 await affiliationsChart(scene);
 
-//Render the scene we created
+//Render the scene every frame
 babylonEngine.runRenderLoop(() => {
   scene.render()
 })
@@ -45,19 +41,7 @@ window.addEventListener("resize", function () {
   babylonEngine.resize();
 });
 
-//enable webXR through babylon and enable some features like multi-view layers and space warp for better performance on supported devices/browsers.
-//if you browser does not support these feature comment it out.
-try {
-  var defaultXRExperience = await scene.createDefaultXRExperienceAsync({});
-  // const featureManager = defaultXRExperience.baseExperience.featuresManager;
-  // featuresManager.enableFeature(WebXRFeatureName.LAYERS, "latest", { preferMultiviewOnInit: true }, true, false);
-  // featuresManager.enableFeature(WebXRFeatureName.SPACE_WARP, "latest");
-} catch {
-  console.warn('XR Not Supported');
-}
-
-
-// hide/show the Inspector
+// Add a hotkey to hide/show the Inspector
 window.addEventListener("keydown", (ev) => {
     // Shift+i
     if (ev.key === "I") {
@@ -68,3 +52,14 @@ window.addEventListener("keydown", (ev) => {
         }
     }
 });
+
+//Enable WebXR through Babylon and enable some features like multi-view layers and space warp for better performance on supported devices/browsers.
+//If your browser does not support these features, comment them out
+try {
+  var defaultXRExperience = await scene.createDefaultXRExperienceAsync({});
+  // const featureManager = defaultXRExperience.baseExperience.featuresManager;
+  // featuresManager.enableFeature(WebXRFeatureName.LAYERS, "latest", { preferMultiviewOnInit: true }, true, false);
+  // featuresManager.enableFeature(WebXRFeatureName.SPACE_WARP, "latest");
+} catch {
+  console.warn('XR Not Supported');
+}
