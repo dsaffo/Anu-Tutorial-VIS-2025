@@ -64,7 +64,8 @@ export const affiliationsChart = async (scene) => {
   //Drop all affiliations that have invalid lat/lon
   dataTransformed = dataTransformed.filter(d => !isNaN(d.Latitude) && !isNaN(d.Longitude));
 
-  let scaleY = d3.scaleLinear().domain([0, d3.max(dataTransformed, d => d.Count)]).range([0, 5]);
+  //Create a D3 scale for our y-axis
+  let scaleY = d3.scaleLinear().domain([0, d3.max(dataTransformed, d => d.Count)]).range([0, 5]); //Count of papers
 
   //We will use Mesh instancing to improve performance of our scatter plot dots
   //First we create a root Mesh will be instanced off of
@@ -76,6 +77,12 @@ export const affiliationsChart = async (scene) => {
   let bars = chart.bindInstance(rootBox, dataTransformed)
                   .setInstancedBuffer('color', new BABYLON.Color4(0, 0, 0, 1));
 
+
+  //We can also add text labels to each bar
+  let labels = chart.bind('planeText', { size: 0.1, text: (d) => d.NameSimple }, dataTransformed)
+                    .prop('isVisible', false);  //Hide initially
+
+  //We only want to update the bars and labels once the map has finished loading
   openLayersMap.on('rendercomplete', () => {
     //Update the bars
     bars.positionX((d) => scaleLon([d.Longitude, d.Latitude]))
@@ -90,6 +97,13 @@ export const affiliationsChart = async (scene) => {
           n.position.z > parentBoundingBox.maximum.z ||
           n.position.z < parentBoundingBox.minimum.z);
       });
+
+    //Update the labels
+    labels.position((d) => new BABYLON.Vector3(scaleLon([d.Longitude, d.Latitude]),
+                                                scaleY(d.Count) + 0.05,
+                                                scaleLat([d.Longitude, d.Latitude])))
+          .prop('isVisible', (d) => d.Count >= 10); //Only show "prominent" institutions
+
   });
 
   return scene;
