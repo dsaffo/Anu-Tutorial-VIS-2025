@@ -1,19 +1,24 @@
-# ieeevr-2024-tutorial
+# IEEE VIS Anu.js Tutorial 2025
 
-This repo contains the template used for the IEEE VR 2024 Tutorial [Developing Immersive and Collaborative Visualizations with Web-Technologies](https://ieeevr.org/2024/program/tutorials/#T4). This tutorial covers creating immersive and collaborative visualization on the web using [Babylon.js](https://www.babylonjs.com/), [Anu.js](https://jpmorganchase.github.io/anu), [D3.js](https://d3js.org/) and [Colyseus](https://colyseus.io/).
+This repo contains the template used for the IEEE VIS 2025 Tutorial. This tutorial covers creating immersive and interactive visualization on the web using [Babylon.js](https://www.babylonjs.com/), [Anu.js](https://jpmorganchase.github.io/anu), and [D3.js](https://d3js.org/).
 
 ## Requirments 
+1. GitHub
 
-1. [Node.js](https://nodejs.org/en)
+2. [Node.js](https://nodejs.org/en)
 
-2. [Git](https://git-scm.com/)
+3. [Git](https://git-scm.com/)
 
-3. [vscode](https://code.visualstudio.com/) or you perfered text editor
+4. [vscode](https://code.visualstudio.com/) or you perfered text editor
 
 ## Install
 
+1. Launch the repo using GitHub CodeSpace
+
+or 
+
 1. Clone or Fork and Clone this repo.
-2. Naviagte to the repo folder with your terminal and run the following commands
+2. Navigate to the repo folder with your terminal and run the following commands
 
 ```
 //install all node dependencies
