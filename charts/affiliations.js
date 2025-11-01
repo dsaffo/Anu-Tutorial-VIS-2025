@@ -102,7 +102,14 @@ export const affiliationsChart = async (scene) => {
     labels.position((d) => new BABYLON.Vector3(scaleLon([d.Longitude, d.Latitude]),
                                                 scaleY(d.Count) + 0.05,
                                                 scaleLat([d.Longitude, d.Latitude])))
-          .prop('isVisible', (d) => d.Count >= 10); //Only show "prominent" institutions
+      .prop('isVisible', (d,n,i) => {
+        const parentBoundingBox = textureMap.mesh.getBoundingInfo().boundingBox;
+        return !(n.position.x > parentBoundingBox.maximum.x ||
+          n.position.x < parentBoundingBox.minimum.x ||
+          n.position.z > parentBoundingBox.maximum.z ||
+          n.position.z < parentBoundingBox.minimum.z) &&
+          d.Count >= 10;  //Only show "prominent" institutions
+      });
 
   });
 
