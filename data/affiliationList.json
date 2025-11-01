@@ -1,4 +1,4 @@
-export const affiliations = [{
+[{
     "Number": "0",
     "Name": "University of British Columbia",
     "NameSimple": "UBC",
@@ -38,7 +38,7 @@ export const affiliations = [{
     "Name": "Monash University",
     "NameSimple": "Monash",
     "Position": "-37.9105238,145.1340242"
-}, {"Number": "8", "Name": "IPL-Gatersleben", "NameSimple": "IPL", "Position": "51.826587,11.2781408"}, {
+}, { "Number": "8", "Name": "IPL-Gatersleben", "NameSimple": "IPL", "Position": "51.826587,11.2781408" }, {
     "Number": "9",
     "Name": "National ICT Australia",
     "NameSimple": "ICT",
@@ -83,7 +83,7 @@ export const affiliations = [{
     "Name": "INRIA-LRI and Univ. of Sydney",
     "NameSimple": "INRIA",
     "Position": "44.808753,-0.60244"
-}, {"Number": "18", "Name": "NICTA", "NameSimple": "NICTA", "Position": "-33.8479255,150.6511041"}, {
+}, { "Number": "18", "Name": "NICTA", "NameSimple": "NICTA", "Position": "-33.8479255,150.6511041" }, {
     "Number": "19",
     "Name": "INRIA",
     "NameSimple": "INRIA",
@@ -103,7 +103,7 @@ export const affiliations = [{
     "Name": "The Charlotte Visualization Center, UNC Charlotte",
     "NameSimple": "UNC",
     "Position": "35.3070929,-80.737358"
-}, {"Number": "23", "Name": "UIUC", "NameSimple": "UIUC", "Position": "40.1019523,-88.2293555"}, {
+}, { "Number": "23", "Name": "UIUC", "NameSimple": "UIUC", "Position": "40.1019523,-88.2293555" }, {
     "Number": "24",
     "Name": "NVIDIA",
     "NameSimple": "NVIDIA",
@@ -113,7 +113,7 @@ export const affiliations = [{
     "Name": "University of Rostock",
     "NameSimple": "Rostock",
     "Position": "54.1474694,12.0065286"
-}, {"Number": "26", "Name": "U", "NameSimple": "", "Position": ""}, {
+}, { "Number": "26", "Name": "U", "NameSimple": "", "Position": "" }, {
     "Number": "27",
     "Name": "IBM Research",
     "NameSimple": "IBM",
@@ -138,7 +138,7 @@ export const affiliations = [{
     "Name": "Visual Communication Lab at IBM",
     "NameSimple": "IBM",
     "Position": "42.3664088,-71.0795096"
-}, {"Number": "32", "Name": "UNC Charlotte", "NameSimple": "UNC", "Position": "35.3070929,-80.737358"}, {
+}, { "Number": "32", "Name": "UNC Charlotte", "NameSimple": "UNC", "Position": "35.3070929,-80.737358" }, {
     "Number": "33",
     "Name": "University of Calgary",
     "NameSimple": "Calgary",
@@ -208,12 +208,12 @@ export const affiliations = [{
     "Name": "BC Cancer Agency, Genome Sciences Centre",
     "NameSimple": "BC Cancer Agency",
     "Position": "49.2647457,-123.1190463"
-}, {"Number": "47", "Name": "Norrk&amp;#x0F6", "NameSimple": "", "Position": ""}, {
+}, { "Number": "47", "Name": "Norrk&amp;#x0F6", "NameSimple": "", "Position": "" }, {
     "Number": "48",
     "Name": "ping Visualization and Interaction Studio, Link&amp;#x0F6",
     "NameSimple": "ping",
     "Position": ""
-}, {"Number": "49", "Name": "ping University", "NameSimple": "ping", "Position": ""}, {
+}, { "Number": "49", "Name": "ping University", "NameSimple": "ping", "Position": "" }, {
     "Number": "50",
     "Name": "University of Victoria",
     "NameSimple": "Victoria",
@@ -283,12 +283,12 @@ export const affiliations = [{
     "Name": "Ontario Cancer Institute",
     "NameSimple": "Ontario Cancer Institute",
     "Position": "43.6594185,-79.3919727"
-}, {"Number": "64", "Name": "O", "NameSimple": "", "Position": ""}, {
+}, { "Number": "64", "Name": "O", "NameSimple": "", "Position": "" }, {
     "Number": "65",
     "Name": "Harvard University",
     "NameSimple": "Harvard",
     "Position": "42.3770029,-71.1188541"
-}, {"Number": "66", "Name": "G", "NameSimple": "", "Position": ""}, {
+}, { "Number": "66", "Name": "G", "NameSimple": "", "Position": "" }, {
     "Number": "67",
     "Name": "Travelport Corp.",
     "NameSimple": "Travelport Corp.",
@@ -303,7 +303,7 @@ export const affiliations = [{
     "Name": "Visual Computing Group, Swansea University, UK.",
     "NameSimple": "Swansea",
     "Position": "51.6081927,-3.9828412"
-}, {"Number": "70", "Name": "IDEA", "NameSimple": "IDEA", "Position": ""}, {
+}, { "Number": "70", "Name": "IDEA", "NameSimple": "IDEA", "Position": "" }, {
     "Number": "71",
     "Name": "Human-Computer Interaction Lab and Dept. of Computer Science, University of Maryland at College Park",
     "NameSimple": "Maryland",
@@ -333,7 +333,7 @@ export const affiliations = [{
     "Name": "Purdue University in West Lafayette, IN",
     "NameSimple": "Purdue",
     "Position": "40.4237054,-86.9233886"
-}, {"Number": "77", "Name": "LGI2P/EMA Research Center", "NameSimple": "LGI2P", "Position": ""}, {
+}, { "Number": "77", "Name": "LGI2P/EMA Research Center", "NameSimple": "LGI2P", "Position": "" }, {
     "Number": "78",
     "Name": "UNSW",
     "NameSimple": "UNSW",
@@ -343,7 +343,7 @@ export const affiliations = [{
     "Name": "Drexel University",
     "NameSimple": "Drexel",
     "Position": "39.9566127,-75.1921381"
-}, {"Number": "80", "Name": "UCSB", "NameSimple": "UCSB", "Position": ""}, {
+}, { "Number": "80", "Name": "UCSB", "NameSimple": "UCSB", "Position": "" }, {
     "Number": "81",
     "Name": "S",
     "NameSimple": "",
@@ -363,7 +363,7 @@ export const affiliations = [{
     "Name": "Heidelberg University",
     "NameSimple": "Heidelberg",
     "Position": "49.4057071,8.6134031"
-}, {"Number": "85", "Name": "IEEE, Member", "NameSimple": "", "Position": ""}, {
+}, { "Number": "85", "Name": "IEEE, Member", "NameSimple": "", "Position": "" }, {
     "Number": "86",
     "Name": "E",
     "NameSimple": "",
@@ -413,7 +413,7 @@ export const affiliations = [{
     "Name": "University of California, Berkeley",
     "NameSimple": "Berkeley",
     "Position": "37.8707702,-122.3360852"
-}, {"Number": "96", "Name": "Agilent Laboratories", "NameSimple": "Agilent", "Position": ""}, {
+}, { "Number": "96", "Name": "Agilent Laboratories", "NameSimple": "Agilent", "Position": "" }, {
     "Number": "97",
     "Name": "&amp;#x0C9",
     "NameSimple": "",
@@ -463,7 +463,7 @@ export const affiliations = [{
     "Name": "Microsoft",
     "NameSimple": "Microsoft",
     "Position": "47.6421245,-122.1399307"
-}, {"Number": "107", "Name": "cole Centrale", "NameSimple": "", "Position": ""}, {
+}, { "Number": "107", "Name": "cole Centrale", "NameSimple": "", "Position": "" }, {
     "Number": "108",
     "Name": "UNC-Charlotte",
     "NameSimple": "UNC",
@@ -538,12 +538,12 @@ export const affiliations = [{
     "Name": "Hong Kong University of Science and Technology",
     "NameSimple": "HKUST",
     "Position": "22.3526735,113.9872718"
-}, {"Number": "123", "Name": "IBM T.J. Watson Research Center", "NameSimple": "IBM", "Position": ""}, {
+}, { "Number": "123", "Name": "IBM T.J. Watson Research Center", "NameSimple": "IBM", "Position": "" }, {
     "Number": "124",
     "Name": "University of W&amp;#x0FC",
     "NameSimple": "Wuerzburg",
     "Position": "49.7780519,9.8728175"
-}, {"Number": "125", "Name": "rzburg", "NameSimple": "Wuerzburg", "Position": "49.7780519,9.8728175"}, {
+}, { "Number": "125", "Name": "rzburg", "NameSimple": "Wuerzburg", "Position": "49.7780519,9.8728175" }, {
     "Number": "126",
     "Name": "Brigham and Women's Hospital &amp; Harvard Medical School",
     "NameSimple": "Brigham",
@@ -643,7 +643,7 @@ export const affiliations = [{
     "Name": "DGAC/DSNA, Toulouse, France",
     "NameSimple": "DSNA",
     "Position": "43.6006785,1.3626297"
-}, {"Number": "146", "Name": "University of S&amp;#x0E3", "NameSimple": "Sao Paulo", "Position": ""}, {
+}, { "Number": "146", "Name": "University of S&amp;#x0E3", "NameSimple": "Sao Paulo", "Position": "" }, {
     "Number": "147",
     "Name": "o Paulo, S&amp;#x0E3",
     "NameSimple": "Sao Paulo",
@@ -713,7 +713,7 @@ export const affiliations = [{
     "Name": "Middlesex University",
     "NameSimple": "Middlesex",
     "Position": "51.5901379,-0.231108"
-}, {"Number": "161", "Name": "Chonnam National University", "NameSimple": "Chonnam", "Position": ""}, {
+}, { "Number": "161", "Name": "Chonnam National University", "NameSimple": "Chonnam", "Position": "" }, {
     "Number": "162",
     "Name": "Universität Würzburg",
     "NameSimple": "Wuerzburg",
@@ -748,7 +748,7 @@ export const affiliations = [{
     "Name": "Phylosophy, Oxford University",
     "NameSimple": "Oxford",
     "Position": "51.7548164,-1.2565608"
-}, {"Number": "169", "Name": "IBM", "NameSimple": "IBM", "Position": ""}, {
+}, { "Number": "169", "Name": "IBM", "NameSimple": "IBM", "Position": "" }, {
     "Number": "170",
     "Name": "University of Augsburg",
     "NameSimple": "Augsburg",
@@ -758,17 +758,17 @@ export const affiliations = [{
     "Name": "University of California Davis",
     "NameSimple": "UC Davis",
     "Position": "38.5568118,-121.7700489"
-}, {"Number": "172", "Name": "LRI", "NameSimple": "LRI", "Position": ""}, {
+}, { "Number": "172", "Name": "LRI", "NameSimple": "LRI", "Position": "" }, {
     "Number": "173",
     "Name": "DIGITEO/CNRS/INRIA",
     "NameSimple": "INRIA",
     "Position": "48.707855,2.150289"
-}, {"Number": "174", "Name": "KU Leuven", "NameSimple": "Leuven", "Position": ""}, {
+}, { "Number": "174", "Name": "KU Leuven", "NameSimple": "Leuven", "Position": "" }, {
     "Number": "175",
     "Name": "University of Sydney",
     "NameSimple": "Sydney",
     "Position": "-30.7677352,148.4709582"
-}, {"Number": "176", "Name": "TU Wien", "NameSimple": "Vienna", "Position": "48.1960526,16.3674127"}, {
+}, { "Number": "176", "Name": "TU Wien", "NameSimple": "Vienna", "Position": "48.1960526,16.3674127" }, {
     "Number": "177",
     "Name": "University of Maryland",
     "NameSimple": "Maryland",
@@ -778,27 +778,27 @@ export const affiliations = [{
     "Name": "University of Ontario Institute of Technology",
     "NameSimple": "Ontario",
     "Position": "43.6594185,-79.3919727"
-}, {"Number": "179", "Name": "AT&amp;amp", "NameSimple": "ATT", "Position": ""}, {
+}, { "Number": "179", "Name": "AT&amp;amp", "NameSimple": "ATT", "Position": "" }, {
     "Number": "180",
     "Name": "T Labs Research",
     "NameSimple": "ATT",
     "Position": ""
-}, {"Number": "181", "Name": "Link&amp;#x00F6", "NameSimple": "Link", "Position": ""}, {
+}, { "Number": "181", "Name": "Link&amp;#x00F6", "NameSimple": "Link", "Position": "" }, {
     "Number": "182",
     "Name": "Uni Konstanz",
     "NameSimple": "Konstanz",
     "Position": "47.689426,9.1846837"
-}, {"Number": "183", "Name": "Exploratorium", "NameSimple": "Exploratorium", "Position": ""}, {
+}, { "Number": "183", "Name": "Exploratorium", "NameSimple": "Exploratorium", "Position": "" }, {
     "Number": "184",
     "Name": "University of Glasgow",
     "NameSimple": "Glasgow",
     "Position": ""
-}, {"Number": "185", "Name": "Univ Paris-Sud", "NameSimple": "Paris Sud", "Position": ""}, {
+}, { "Number": "185", "Name": "Univ Paris-Sud", "NameSimple": "Paris Sud", "Position": "" }, {
     "Number": "186",
     "Name": "Microsoft Research Aisa",
     "NameSimple": "Microsoft",
     "Position": "39.979372,116.308121"
-}, {"Number": "187", "Name": "Zhe Jiang University", "NameSimple": "Zhejiang", "Position": ""}, {
+}, { "Number": "187", "Name": "Zhe Jiang University", "NameSimple": "Zhejiang", "Position": "" }, {
     "Number": "188",
     "Name": "Bertrand AG, Munich",
     "NameSimple": "Bertrand",
@@ -818,7 +818,7 @@ export const affiliations = [{
     "Name": "Department of Biological and Medical Psychology, University of Bergen",
     "NameSimple": "Bergen",
     "Position": "60.3648896,5.1483146"
-}, {"Number": "192", "Name": "INRIA, Paris", "NameSimple": "INRIA", "Position": "48.707855,2.150289"}, {
+}, { "Number": "192", "Name": "INRIA, Paris", "NameSimple": "INRIA", "Position": "48.707855,2.150289" }, {
     "Number": "193",
     "Name": "University of Groningen, Netherlands",
     "NameSimple": "Groningen",
@@ -833,7 +833,7 @@ export const affiliations = [{
     "Name": "Arizona State University",
     "NameSimple": "Arizona State",
     "Position": "32.2318851,-110.9523034"
-}, {"Number": "196", "Name": "Sejong University", "NameSimple": "Sejong", "Position": ""}, {
+}, { "Number": "196", "Name": "Sejong University", "NameSimple": "Sejong", "Position": "" }, {
     "Number": "197",
     "Name": "University of Oxford",
     "NameSimple": "Oxford",
@@ -858,12 +858,12 @@ export const affiliations = [{
     "Name": "University of Wisconsin",
     "NameSimple": "Wisconsin",
     "Position": "43.076592,-89.4146815"
-}, {"Number": "202", "Name": "Macquarie University", "NameSimple": "Macquarie", "Position": ""}, {
+}, { "Number": "202", "Name": "Macquarie University", "NameSimple": "Macquarie", "Position": "" }, {
     "Number": "203",
     "Name": "ZillionInfo",
     "NameSimple": "ZillionInfo",
     "Position": ""
-}, {"Number": "204", "Name": "University of Auckland", "NameSimple": "Auckland", "Position": ""}, {
+}, { "Number": "204", "Name": "University of Auckland", "NameSimple": "Auckland", "Position": "" }, {
     "Number": "205",
     "Name": "SCI Institute, University of Utah",
     "NameSimple": "Utah",
@@ -883,7 +883,7 @@ export const affiliations = [{
     "Name": "Northeastern University",
     "NameSimple": "Northeastern",
     "Position": "42.3381366,-71.0932978"
-}, {"Number": "209", "Name": "TongJi University", "NameSimple": "TongJi", "Position": ""}, {
+}, { "Number": "209", "Name": "TongJi University", "NameSimple": "TongJi", "Position": "" }, {
     "Number": "210",
     "Name": "Potsdam Institute for Climate Impact Research",
     "NameSimple": "Potsdam Institute for Climate Impact Research",
@@ -908,7 +908,7 @@ export const affiliations = [{
     "Name": "Inria and Universite Paris Sud",
     "NameSimple": "INRIA",
     "Position": "48.707855,2.150289"
-}, {"Number": "215", "Name": "Inria", "NameSimple": "INRIA", "Position": "48.707855,2.150289"}, {
+}, { "Number": "215", "Name": "Inria", "NameSimple": "INRIA", "Position": "48.707855,2.150289" }, {
     "Number": "216",
     "Name": "MIT Computer Science and Artificial Intelligence Laboratory (CSAIL)",
     "NameSimple": "MIT",
@@ -943,12 +943,12 @@ export const affiliations = [{
     "Name": "Novartis Institutes for BioMedical Research",
     "NameSimple": "Novartis",
     "Position": ""
-}, {"Number": "223", "Name": "SAP, Vancouver", "NameSimple": "SAP", "Position": ""}, {
+}, { "Number": "223", "Name": "SAP, Vancouver", "NameSimple": "SAP", "Position": "" }, {
     "Number": "224",
     "Name": "LRI (Univ. Paris-Sud &amp;amp",
     "NameSimple": "Paris Sud",
     "Position": ""
-}, {"Number": "225", "Name": " CNRS) &amp;amp", "NameSimple": "Paris Sud", "Position": ""}, {
+}, { "Number": "225", "Name": " CNRS) &amp;amp", "NameSimple": "Paris Sud", "Position": "" }, {
     "Number": "226",
     "Name": "University of Copenhagen",
     "NameSimple": "Copenhagen",
@@ -958,7 +958,7 @@ export const affiliations = [{
     "Name": "Harvard Medical School",
     "NameSimple": "Harvard",
     "Position": "42.3770029,-71.1188541"
-}, {"Number": "228", "Name": "T Research", "NameSimple": "", "Position": ""}, {
+}, { "Number": "228", "Name": "T Research", "NameSimple": "", "Position": "" }, {
     "Number": "229",
     "Name": "University of Magdeburg",
     "NameSimple": "Magdeburg",
@@ -968,12 +968,12 @@ export const affiliations = [{
     "Name": "University of Wisconsin - Madison",
     "NameSimple": "Wisconsin",
     "Position": "43.076592,-89.4146815"
-}, {"Number": "231", "Name": "Lehrstuhl I, Institut f&amp;#x00FC", "NameSimple": "", "Position": ""}, {
+}, { "Number": "231", "Name": "Lehrstuhl I, Institut f&amp;#x00FC", "NameSimple": "", "Position": "" }, {
     "Number": "232",
     "Name": "r Informatik, Universit&amp;#x00C2",
     "NameSimple": "",
     "Position": ""
-}, {"Number": "233", "Name": "&amp;#x00A8", "NameSimple": "", "Position": ""}, {
+}, { "Number": "233", "Name": "&amp;#x00A8", "NameSimple": "", "Position": "" }, {
     "Number": "234",
     "Name": "at W&amp;#x00FC",
     "NameSimple": "",
@@ -993,12 +993,12 @@ export const affiliations = [{
     "Name": "Shanghai Jiao Tong University",
     "NameSimple": "Shanghai",
     "Position": ""
-}, {"Number": "238", "Name": "Tsinghua University", "NameSimple": "Tsinghua", "Position": ""}, {
+}, { "Number": "238", "Name": "Tsinghua University", "NameSimple": "Tsinghua", "Position": "" }, {
     "Number": "239",
     "Name": "University of Toronto &amp;amp",
     "NameSimple": "Toronto",
     "Position": "43.6567915,-79.461276"
-}, {"Number": "240", "Name": " OCAD University", "NameSimple": "OCAD", "Position": ""}, {
+}, { "Number": "240", "Name": " OCAD University", "NameSimple": "OCAD", "Position": "" }, {
     "Number": "241",
     "Name": "Wayne State University and Children’s Hospital Boston, Harvard Medical School",
     "NameSimple": "Wayne",
@@ -1038,7 +1038,7 @@ export const affiliations = [{
     "Name": "Georgia Aquarium",
     "NameSimple": "Georgia Aquarium",
     "Position": "33.7764256,-84.4033244"
-}, {"Number": "249", "Name": "URJC", "NameSimple": "URJC", "Position": ""}, {
+}, { "Number": "249", "Name": "URJC", "NameSimple": "URJC", "Position": "" }, {
     "Number": "250",
     "Name": "Dep. of Computer Science at City University London, UK",
     "NameSimple": "City University London",
@@ -1088,7 +1088,7 @@ export const affiliations = [{
     "Name": "Google at the time of research, currently unaffiliated",
     "NameSimple": "Google",
     "Position": ""
-}, {"Number": "260", "Name": "Google", "NameSimple": "Google", "Position": ""}, {
+}, { "Number": "260", "Name": "Google", "NameSimple": "Google", "Position": "" }, {
     "Number": "261",
     "Name": "Department of Computer Sciences, University of Wisconsin-Madison",
     "NameSimple": "Wisconsin",
@@ -1123,7 +1123,7 @@ export const affiliations = [{
     "Name": "University of Applied Sciences Upper Austria",
     "NameSimple": "Upper Austria",
     "Position": ""
-}, {"Number": "268", "Name": "VRVis", "NameSimple": "VRVis", "Position": ""}, {
+}, { "Number": "268", "Name": "VRVis", "NameSimple": "VRVis", "Position": "" }, {
     "Number": "269",
     "Name": "University of Chicago",
     "NameSimple": "Chicago",
@@ -1153,7 +1153,7 @@ export const affiliations = [{
     "Name": "New York University",
     "NameSimple": "NYU",
     "Position": "40.7295134,-73.9986549"
-}, {"Number": "275", "Name": "VISUS", "NameSimple": "VISUS", "Position": ""}, {
+}, { "Number": "275", "Name": "VISUS", "NameSimple": "VISUS", "Position": "" }, {
     "Number": "276",
     "Name": "Indiana University",
     "NameSimple": "Indiana",
@@ -1163,7 +1163,7 @@ export const affiliations = [{
     "Name": "CNRS &amp; Inria, Université Paris-Sud",
     "NameSimple": "INRIA",
     "Position": "48.707855,2.150289"
-}, {"Number": "278", "Name": "NYU Poly", "NameSimple": "NYU", "Position": "40.7295134,-73.9986549"}, {
+}, { "Number": "278", "Name": "NYU Poly", "NameSimple": "NYU", "Position": "40.7295134,-73.9986549" }, {
     "Number": "279",
     "Name": "Columbia Journalism School and the Associated Press",
     "NameSimple": "Columbia",
@@ -1183,7 +1183,7 @@ export const affiliations = [{
     "Name": "Department of Mathematic and Computer Science, Eindhoven University of Technology, The Netherlands",
     "NameSimple": "Eindhoven",
     "Position": "51.4484646,5.3812994"
-}, {"Number": "283", "Name": "Kent State University", "NameSimple": "Kent", "Position": ""}, {
+}, { "Number": "283", "Name": "Kent State University", "NameSimple": "Kent", "Position": "" }, {
     "Number": "284",
     "Name": "Adobe Research",
     "NameSimple": "Adobe",
@@ -1233,7 +1233,7 @@ export const affiliations = [{
     "Name": "Exertion Games Lab, RMIT University",
     "NameSimple": "RMIT",
     "Position": ""
-}, {"Number": "294", "Name": "EnerNOC, Inc.", "NameSimple": "", "Position": ""}, {
+}, { "Number": "294", "Name": "EnerNOC, Inc.", "NameSimple": "", "Position": "" }, {
     "Number": "295",
     "Name": "Norrköping Visualization Center C/Linköping University, Sweden",
     "NameSimple": "Linkoping",
@@ -1288,7 +1288,7 @@ export const affiliations = [{
     "Name": "the giCentre, City University London",
     "NameSimple": "City University London",
     "Position": "51.5285578,-0.2420236"
-}, {"Number": "306", "Name": "EnsadLab", "NameSimple": "", "Position": ""}, {
+}, { "Number": "306", "Name": "EnsadLab", "NameSimple": "", "Position": "" }, {
     "Number": "307",
     "Name": "Telecom ParisTech",
     "NameSimple": "Telecom",
@@ -1323,12 +1323,12 @@ export const affiliations = [{
     "Name": "Sheizaf Rafaeli is with University of Haifa, Israel",
     "NameSimple": "Haifa",
     "Position": "32.7652622,35.0135673"
-}, {"Number": "314", "Name": "U-tad", "NameSimple": "", "Position": ""}, {
+}, { "Number": "314", "Name": "U-tad", "NameSimple": "", "Position": "" }, {
     "Number": "315",
     "Name": "UPM",
     "NameSimple": "",
     "Position": ""
-}, {"Number": "316", "Name": "URJC and CCS", "NameSimple": "", "Position": ""}, {
+}, { "Number": "316", "Name": "URJC and CCS", "NameSimple": "", "Position": "" }, {
     "Number": "317",
     "Name": "Department of Computer Science, University of Calgary",
     "NameSimple": "Calgary",
@@ -1363,7 +1363,7 @@ export const affiliations = [{
     "Name": "Sichuan University",
     "NameSimple": "Sichuan",
     "Position": "30.719727,104.5491797"
-}, {"Number": "324", "Name": "Huawei Co. Ltd.", "NameSimple": "Huawei", "Position": ""}, {
+}, { "Number": "324", "Name": "Huawei Co. Ltd.", "NameSimple": "Huawei", "Position": "" }, {
     "Number": "325",
     "Name": "Potsdam University of Applied Sciences",
     "NameSimple": "Potsdam",
@@ -1378,7 +1378,7 @@ export const affiliations = [{
     "Name": "School of Engineering &amp; Applied Sciences, Harvard University",
     "NameSimple": "Harvard",
     "Position": "42.3770029,-71.1188541"
-}, {"Number": "328", "Name": "Bucknell University", "NameSimple": "Bucknell", "Position": ""}, {
+}, { "Number": "328", "Name": "Bucknell University", "NameSimple": "Bucknell", "Position": "" }, {
     "Number": "329",
     "Name": "Tufts University and Aptima Inc.",
     "NameSimple": "Tufts",
@@ -1388,7 +1388,7 @@ export const affiliations = [{
     "Name": "Maine Medical Center and Tufts Medical School",
     "NameSimple": "Maine Medical Center",
     "Position": "42.4074843,-71.1212172"
-}, {"Number": "331", "Name": "Siemens AG", "NameSimple": "Siemens", "Position": ""}, {
+}, { "Number": "331", "Name": "Siemens AG", "NameSimple": "Siemens", "Position": "" }, {
     "Number": "332",
     "Name": "TU Graz",
     "NameSimple": "Graz",
@@ -1403,7 +1403,7 @@ export const affiliations = [{
     "Name": "University of Utah Department of English",
     "NameSimple": "Utah",
     "Position": "40.7649368,-111.8442961"
-}, {"Number": "335", "Name": "An Independent Researcher", "NameSimple": "", "Position": ""}, {
+}, { "Number": "335", "Name": "An Independent Researcher", "NameSimple": "", "Position": "" }, {
     "Number": "336",
     "Name": "Microsoft Research-Inria Joint Centre",
     "NameSimple": "Microsoft",
@@ -1413,7 +1413,7 @@ export const affiliations = [{
     "Name": "IBM T.J, Watson Research Center, Yorktown Height, NY",
     "NameSimple": "IBM",
     "Position": ""
-}, {"Number": "338", "Name": "IRT SystemX", "NameSimple": "IRT", "Position": ""}, {
+}, { "Number": "338", "Name": "IRT SystemX", "NameSimple": "IRT", "Position": "" }, {
     "Number": "339",
     "Name": "Department of Radiology, University of Washington",
     "NameSimple": "Washington",
@@ -1493,12 +1493,12 @@ export const affiliations = [{
     "Name": "Maine Medical Center",
     "NameSimple": "Maine Medical Center",
     "Position": ""
-}, {"Number": "355", "Name": "VRVis Research Center", "NameSimple": "VRVis", "Position": ""}, {
+}, { "Number": "355", "Name": "VRVis Research Center", "NameSimple": "VRVis", "Position": "" }, {
     "Number": "356",
     "Name": "University Linz",
     "NameSimple": "Linz",
     "Position": "48.2950436,14.2571939"
-}, {"Number": "357", "Name": "Twitter Inc.", "NameSimple": "Twitter", "Position": ""}, {
+}, { "Number": "357", "Name": "Twitter Inc.", "NameSimple": "Twitter", "Position": "" }, {
     "Number": "358",
     "Name": "University of OntarioInstitute of Technology",
     "NameSimple": "Ontario",
@@ -1553,7 +1553,7 @@ export const affiliations = [{
     "Name": "Computer Science department, Cornell University",
     "NameSimple": "Cornell",
     "Position": "42.4534492,-76.4756967"
-}, {"Number": "369", "Name": "Instituto de InformáticaUFRGS", "NameSimple": "", "Position": ""}, {
+}, { "Number": "369", "Name": "Instituto de InformáticaUFRGS", "NameSimple": "", "Position": "" }, {
     "Number": "370",
     "Name": "University of Manitoba, Canada",
     "NameSimple": "Manitoba",
@@ -1573,7 +1573,7 @@ export const affiliations = [{
     "Name": "DePaul University",
     "NameSimple": "DePaul",
     "Position": "41.9247559,-87.6588405"
-}, {"Number": "374", "Name": "New York University, Shanghai", "NameSimple": "NYU", "Position": ""}, {
+}, { "Number": "374", "Name": "New York University, Shanghai", "NameSimple": "NYU", "Position": "" }, {
     "Number": "375",
     "Name": "Los Alamos National Laboratory",
     "NameSimple": "Los Alamos",
@@ -1703,12 +1703,12 @@ export const affiliations = [{
     "Name": "Interactive Media Lab, Technische Universität Dresden, Germany",
     "NameSimple": "Dresden",
     "Position": "51.0292734,13.7268024"
-}, {"Number": "401", "Name": "Independent scholar", "NameSimple": "", "Position": ""}, {
+}, { "Number": "401", "Name": "Independent scholar", "NameSimple": "", "Position": "" }, {
     "Number": "402",
     "Name": "Disney Research, Z&amp;#x00FC",
     "NameSimple": "Disney",
     "Position": ""
-}, {"Number": "403", "Name": "rich", "NameSimple": "Disney", "Position": ""}, {
+}, { "Number": "403", "Name": "rich", "NameSimple": "Disney", "Position": "" }, {
     "Number": "404",
     "Name": "RWTH Aachen University",
     "NameSimple": "RWTH",
@@ -1728,7 +1728,7 @@ export const affiliations = [{
     "Name": "Madison",
     "NameSimple": "Wisconsin",
     "Position": "43.076592,-89.4146815"
-}, {"Number": "408", "Name": "State Key Lab of CAD &amp;#x0026", "NameSimple": "", "Position": ""}, {
+}, { "Number": "408", "Name": "State Key Lab of CAD &amp;#x0026", "NameSimple": "", "Position": "" }, {
     "Number": "409",
     "Name": " CGZhejiang University",
     "NameSimple": "Zhejiang",
@@ -1758,7 +1758,7 @@ export const affiliations = [{
     "Name": "Universidad Católica San Pablo",
     "NameSimple": "San Pablo",
     "Position": "-16.3901384,-71.5379101"
-}, {"Number": "415", "Name": "ENAC", "NameSimple": "ENAC", "Position": "43.5657466,1.478305"}, {
+}, { "Number": "415", "Name": "ENAC", "NameSimple": "ENAC", "Position": "43.5657466,1.478305" }, {
     "Number": "416",
     "Name": "Institute of Computer Science, Westfälische Wilhelms-Universität Münster, Germany",
     "NameSimple": "Muenster",
@@ -1838,7 +1838,7 @@ export const affiliations = [{
     "Name": "Shandong University",
     "NameSimple": "Shangdong",
     "Position": "36.6809638,116.9712285"
-}, {"Number": "432", "Name": "Southeast University", "NameSimple": "", "Position": ""}, {
+}, { "Number": "432", "Name": "Southeast University", "NameSimple": "", "Position": "" }, {
     "Number": "433",
     "Name": "Konstanz University, VCC SIAT, China",
     "NameSimple": "Konstanz",
@@ -1908,7 +1908,7 @@ export const affiliations = [{
     "Name": "Simon Fraser University",
     "NameSimple": "Fraser",
     "Position": "49.2780937,-122.9220773"
-}, {"Number": "447", "Name": "Honeycomb.io", "NameSimple": "Honeycomb", "Position": ""}, {
+}, { "Number": "447", "Name": "Honeycomb.io", "NameSimple": "Honeycomb", "Position": "" }, {
     "Number": "448",
     "Name": "Chinese University of Hong Kong",
     "NameSimple": "Chinese University of Hong Kong",
@@ -1973,7 +1973,7 @@ export const affiliations = [{
     "Name": "State Key Lab of CAD and CGZhejiang University",
     "NameSimple": "Zhejiang",
     "Position": "30.0686624,120.5639239"
-}, {"Number": "461", "Name": "Central South University", "NameSimple": "", "Position": ""}, {
+}, { "Number": "461", "Name": "Central South University", "NameSimple": "", "Position": "" }, {
     "Number": "462",
     "Name": "Seoul National University, Republic of Korea",
     "NameSimple": "Seoul",
@@ -2083,7 +2083,7 @@ export const affiliations = [{
     "Name": "Univ Lyon, École Centrale de Lyon, CNRS UMR52 05, LIRIS, France",
     "NameSimple": "Lyon",
     "Position": "45.757934,4.7649097"
-}, {"Number": "484", "Name": "Data61, CSIRO, Australia", "NameSimple": "", "Position": ""}, {
+}, { "Number": "484", "Name": "Data61, CSIRO, Australia", "NameSimple": "", "Position": "" }, {
     "Number": "485",
     "Name": "Magic Weaver Inc., Santa Clara, CA",
     "NameSimple": "Magic Weaver",
@@ -2103,7 +2103,7 @@ export const affiliations = [{
     "Name": "School of InformationUniversity of Michigan",
     "NameSimple": "Michigan",
     "Position": "42.2848416,-83.7348058"
-}, {"Number": "489", "Name": "ISIR", "NameSimple": "ISIR", "Position": ""}, {
+}, { "Number": "489", "Name": "ISIR", "NameSimple": "ISIR", "Position": "" }, {
     "Number": "490",
     "Name": "Univ. Paris-Sud &amp; CNRS (LRI)Inria",
     "NameSimple": "Paris Sud",
@@ -2148,4 +2148,4 @@ export const affiliations = [{
     "Name": "SIAT, Shenzhen VisuCA Key Lab, China",
     "NameSimple": "Shenzhen",
     "Position": "22.5550993,113.9134507"
-}];
+}]
