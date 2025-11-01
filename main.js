@@ -34,7 +34,7 @@ await affiliationsChart(scene);
 //Render the scene every frame
 babylonEngine.runRenderLoop(() => {
   scene.render()
-})
+});
 
 //Listen for window size changes and resize the scene accordingly
 window.addEventListener("resize", function () {

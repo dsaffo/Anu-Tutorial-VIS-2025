@@ -158,5 +158,31 @@ export const authorsNetwork = async (scene) => {
     ));
 
 
+  //--------------------------------------------
+
+  //Bind an action to show the link
+  nodes.action((d, n, i) => new BABYLON.ExecuteCodeAction(
+    BABYLON.ActionManager.OnPointerOverTrigger,
+    () => {
+      //Select the bar on the map that corresponds to this author's affiliation
+      anu.selectId(d.affiliation, scene)
+        .transition({ duration: 500 })  //To demonstrate animations, here we use scale for emphasis
+        .scalingX(5)
+        .scalingZ(5);
+    }
+  ));
+
+  //Bind an action to reset the link
+  nodes.action((d, n, i) => new BABYLON.ExecuteCodeAction(
+    BABYLON.ActionManager.OnPointerOutTrigger,
+    () => {
+      //Select the bar on the map that corresponds to this author's affiliation
+      anu.selectId(d.affiliation, scene)
+        .transition({ duration: 500 })
+        .scalingX(1)
+        .scalingZ(1);
+    }
+  ));
+
   return scene;
 }

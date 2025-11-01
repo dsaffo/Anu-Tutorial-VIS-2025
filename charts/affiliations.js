@@ -69,12 +69,13 @@ export const affiliationsChart = async (scene) => {
 
   //We will use Mesh instancing to improve performance of our scatter plot dots
   //First we create a root Mesh will be instanced off of
-  let rootBox = anu.create('box', 'root-box', { size: 1 });
+  let rootBox = anu.create('box', 'root-box', { width: 0.05, height: 1, depth: 0.05});
   rootBox.isVisible = false;
   rootBox.registerInstancedBuffer('color', 4);
 
   //Then we bind instances from this root Mesh to create our bars
   let bars = chart.bindInstance(rootBox, dataTransformed)
+                  .id((d) => d.Name)
                   .setInstancedBuffer('color', new BABYLON.Color4(0, 0, 0, 1));
 
 
@@ -87,7 +88,7 @@ export const affiliationsChart = async (scene) => {
     //Update the bars
     bars.positionX((d) => scaleLon([d.Longitude, d.Latitude]))
       .positionZ((d) => scaleLat([d.Longitude, d.Latitude]))
-      .scaling((d) => new BABYLON.Vector3(0.05, scaleY(d.Count), 0.05))
+      .scalingY((d) => scaleY(d.Count))
       .positionY((d) => scaleY(d.Count) / 2)
       .setInstancedBuffer('color', (d) => scaleC(d.Name))
       .prop('isVisible', (d, n, i) => {
@@ -110,7 +111,6 @@ export const affiliationsChart = async (scene) => {
           n.position.z < parentBoundingBox.minimum.z) &&
           d.Count >= 10;  //Only show "prominent" institutions
       });
-
   });
 
   return scene;
