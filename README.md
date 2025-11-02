@@ -2,15 +2,6 @@
 
 This repo contains the template used for the IEEE VIS 2025 Tutorial. This tutorial covers creating immersive and interactive visualization on the web using [Babylon.js](https://www.babylonjs.com/), [Anu.js](https://jpmorganchase.github.io/anu), and [D3.js](https://d3js.org/).
 
-## LIVE LINKS: 
-
-SURVEY: https://www.surveymonkey.com/r/ZY6CJCD
-
-[DEV SERVER](https://tinyurl.com/anuvis2025): https://tinyurl.com/anuvis2025
-
-[CODE SPACE](https://literate-space-journey-q7p7wgwv4qphxpgg-5990.app.github.dev/): https://tinyurl.com/5n7ftjsz 
-
-
 
 ## Requirments 
 1. GitHub
